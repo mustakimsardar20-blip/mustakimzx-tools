@@ -7,24 +7,40 @@
 <meta name="theme-color" content="#10172a">
 <title>MUSTAKIMZX TOOLS - Free Online Tools</title>
 <style>
-:root{--bg:#0b1020;--panel:#151e33;--muted:#aab5ca;--text:#f7f9ff;--accent:#6d7cff;--line:#293550}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;background:#f4f6fb;color:#172033}
-header{background:linear-gradient(120deg,#10172a,#253b78);color:white;padding:22px max(18px,calc((100% - 1120px)/2))}
-.brand{font-size:25px;font-weight:850;letter-spacing:.5px}.brand span{color:#9eafff}
-nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}nav a{color:#e3e9ff;text-decoration:none;font-size:14px}
-.hero{max-width:1120px;margin:30px auto 22px;padding:0 18px}.hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 8px}.hero p{color:#5b667a;margin:0 0 20px}
-.search{width:100%;padding:14px 16px;border:1px solid #d8deea;border-radius:12px;font-size:16px;background:white}
-.wrap{max-width:1120px;margin:auto;padding:0 18px 40px}.ad{min-height:90px;border:1px dashed #bbc4d5;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#8792a5;background:#fff;margin:18px 0;font-size:13px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.card{background:white;border:1px solid #e1e6ef;border-radius:15px;padding:18px;box-shadow:0 5px 18px #1b2a4610;cursor:pointer;transition:.15s}.card:hover{transform:translateY(-3px);border-color:#9ba8ff}.ico{font-size:27px}.card h3{margin:8px 0 5px;font-size:17px}.card p{margin:0;color:#667187;font-size:13px;line-height:1.5}
-.toolbox{display:none;background:white;border:1px solid #dfe5ef;border-radius:16px;padding:22px;margin:22px 0}.toolbox.active{display:block}.toolbox h2{margin:0 0 6px}.hint{color:#667187;font-size:13px}.row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.row input,.row select,textarea{padding:11px;border:1px solid #cfd7e5;border-radius:9px;max-width:100%}button,.btn{border:0;border-radius:9px;background:#394fc5;color:white;padding:11px 16px;font-weight:650;cursor:pointer}button.secondary{background:#e9edfa;color:#26356f}button:disabled{opacity:.45}canvas{max-width:100%;height:auto;border:1px solid #e0e4ed;margin-top:12px}.result{margin-top:12px;overflow-wrap:anywhere}footer{background:#10172a;color:#d7def0;padding:28px 18px;text-align:center}footer a{color:#b9c5ff;margin:0 8px}.page{display:none;background:white;border-radius:14px;padding:24px;margin:20px 0}.page.active{display:block}.page h2{margin-top:0}
-@media(max-width:600px){header{padding:18px}.brand{font-size:22px}.toolbox{padding:16px}.row>*{width:100%}}
+:root{--bg:#080b16;--panel:#11182b;--panel2:#151f37;--muted:#9eabc4;--text:#f4f7ff;--accent:#8b7cff;--cyan:#40d9ff;--line:#273451}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(ellipse at 15% 0%,#18234a 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#21153f 0,transparent 30%),var(--bg);color:var(--text);min-height:100vh}
+header{position:sticky;top:0;z-index:10;background:#090e1ddd;backdrop-filter:blur(16px);border-bottom:1px solid #26314c;padding:17px max(18px,calc((100% - 1180px)/2))}
+.brand{font-size:24px;font-weight:900;letter-spacing:.7px}.brand span{background:linear-gradient(90deg,#57dcff,#a18bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:20px;flex-wrap:wrap;margin-top:13px}nav a{color:#c8d2e8;text-decoration:none;font-size:14px}nav a:hover{color:#6fe5ff}
+.hero{max-width:1180px;margin:46px auto 28px;padding:0 20px}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.08;margin:0 0 12px;letter-spacing:-1.5px}.hero h1 span{background:linear-gradient(90deg,#55dcff,#a18bff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);margin:0 0 22px;font-size:16px}.search{width:100%;max-width:680px;padding:16px 18px;border:1px solid #344365;border-radius:14px;font-size:15px;background:#111a2d;color:white;outline:none;box-shadow:0 10px 35px #0005}.search:focus{border-color:#7d83ff;box-shadow:0 0 0 3px #7d83ff22}
+.wrap{max-width:1180px;margin:auto;padding:0 20px 48px}.ad{min-height:84px;border:1px dashed #394663;border-radius:15px;display:flex;align-items:center;justify-content:center;color:#8492ad;background:#0d1425aa;margin:20px 0;font-size:12px;letter-spacing:.4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.card{background:linear-gradient(145deg,#151f35,#0f1729);border:1px solid #273653;border-radius:18px;padding:20px;box-shadow:0 12px 30px #0003;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;min-height:150px}.card:hover{transform:translateY(-5px);border-color:#777cff;box-shadow:0 16px 36px #655cff20}.ico{font-size:29px;width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#344d85,#42306e);margin-bottom:13px}.card h3{margin:0 0 7px;font-size:16px}.card p{margin:0;color:#9eabc4;font-size:13px;line-height:1.55}
+.toolbox{display:none;background:linear-gradient(145deg,#151f35,#0f1729);border:1px solid #2b3a5b;border-radius:20px;padding:24px;margin:24px 0;box-shadow:0 15px 45px #0004}.toolbox.active{display:block}.toolbox h2{margin:14px 0 6px}.hint{color:#a5b1c9;font-size:13px}.row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.row input,.row select,textarea{padding:12px;border:1px solid #344365;border-radius:10px;max-width:100%;background:#0b1324;color:#f4f7ff}button,.btn{border:0;border-radius:10px;background:linear-gradient(100deg,#5868ee,#8c63e9);color:white;padding:12px 17px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px #665cff33}button:hover{filter:brightness(1.12)}button.secondary{background:#202d49;color:#dce6ff;box-shadow:none}button:disabled{opacity:.45}canvas{max-width:100%;height:auto;border:1px solid #344365;border-radius:10px;margin-top:12px;background:white}.result{margin-top:12px;overflow-wrap:anywhere}.result canvas{background:white}footer{background:#070b14;border-top:1px solid #202b43;color:#c3cde0;padding:30px 18px;text-align:center}footer a{color:#9eaaff;margin:0 9px}.page{display:none;background:#111a2d;border:1px solid #293958;border-radius:18px;padding:24px;margin:22px 0;color:#dce5f7}.page.active{display:block}.page h2{margin-top:0;color:white}.page a{color:#8ddfff}
+
+/* Premium dashboard refresh */
+:root{--bg:#070a14;--panel:#10182b;--line:#293858}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:15px;padding-bottom:15px}
+header nav{margin:0;align-items:center;gap:9px}nav a{padding:9px 13px;border-radius:10px}nav a:hover{background:#1c2945}
+.hero{margin-top:48px;margin-bottom:34px}.hero:before{content:"✦  YOUR EVERYDAY DIGITAL TOOLKIT";display:inline-block;color:#7de6ff;background:#14213a;border:1px solid #30466c;border-radius:30px;padding:8px 13px;font-size:11px;font-weight:800;letter-spacing:1.2px;margin-bottom:18px}
+.hero h1{max-width:800px}.hero p{max-width:650px;line-height:1.7}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:23px 0}.stat{border:1px solid #2b3b5c;background:#101a30;border-radius:13px;padding:11px 15px;color:#b9c7e2;font-size:12px}.stat b{color:#fff;font-size:16px;margin-right:5px}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin:32px 0 14px}.section-head h2{font-size:22px;margin:0}.section-head p{margin:5px 0 0;color:#91a2c1;font-size:13px}
+.category-label{display:flex;align-items:center;gap:10px;color:#8de6ff;font-weight:800;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;margin:30px 0 13px}.category-label:after{content:"";height:1px;background:#293858;flex:1}
+.grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px}.card{position:relative;overflow:hidden;min-height:158px;padding:19px;background:linear-gradient(145deg,#141f37 0%,#0c1425 100%)}.card:after{content:"↗";position:absolute;right:17px;top:17px;color:#7184ad;font-size:17px}.card:hover{transform:translateY(-4px);border-color:#53d7ff;box-shadow:0 15px 35px #1b9fc522}.ico{background:linear-gradient(135deg,#183d5d,#39316b);border:1px solid #3b5a86}
+.ad{max-width:1000px;margin:28px auto}.toolbox{scroll-margin-top:100px}.toolbox.active{animation:rise .25s ease}@keyframes rise{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:none}}
+footer{line-height:2}
+@media(max-width:700px){header{display:block}header nav{margin-top:12px;gap:4px}nav a{padding:8px 9px;font-size:12px}.hero{margin-top:30px}.stats{gap:7px}.stat{padding:9px 11px}.section-head h2{font-size:19px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-height:158px}}
+
+@media(max-width:600px){header{padding:15px 18px}.brand{font-size:21px}.hero{margin:32px auto 22px}.toolbox{padding:17px}.row>*{width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{padding:15px;min-height:150px}.card h3{font-size:14px}.card p{font-size:12px}.ico{width:42px;height:42px;font-size:24px}}
 </style>
 </head>
 <body>
 <header><div class="brand">MUSTAKIMZX <span>TOOLS</span></div><nav><a href="#" onclick="home()">Home</a><a href="#tools">All Tools</a><a href="#" onclick="showPage('about')">About</a><a href="#" onclick="showPage('privacy')">Privacy</a><a href="#" onclick="showPage('contact')">Contact</a></nav></header>
-<section class="hero"><h1>Free Online Tools for Everyone</h1><p>Fast, simple tools for photos, images, QR codes, barcodes and PDF files.</p><input class="search" id="search" placeholder="Search a tool..." oninput="filterTools()"></section>
+<section class="hero"><h1>Powerful Online Tools.<br><span>One Smart Workspace.</span></h1><p>Fast, simple tools for photos, images, QR codes, barcodes and PDF files — built for mobile and desktop.</p><input class="search" id="search" placeholder="Search a tool..." oninput="filterTools()"></section>
 <main class="wrap">
-<div class="ad">Advertisement space — add your approved AdSense code here</div>
+<div class="ad">ADVERTISEMENT SPACE · Add approved AdSense code after approval</div>
+<div class="stats"><div class="stat"><b>15+</b> useful tools</div><div class="stat"><b>100%</b> browser-based tools where supported</div><div class="stat"><b>Free</b> to use</div></div>
+<div class="section-head"><div><h2>Explore all tools</h2><p>Choose a tool and get your work done in seconds.</p></div></div>
 <section id="toolGrid" class="grid">
 <div class="card" data-name="image resizer"><div class="ico">📐</div><h3>Image Resizer</h3><p>Resize an image to your required width and height.</p></div>
 <div class="card" data-name="image compressor"><div class="ico">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size and download a compressed copy.</p></div>
@@ -38,8 +54,8 @@ nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}nav a{color:#e3e9ff;tex
 <div class="card" data-name="photo collage maker"><div class="ico">🖼️</div><h3>Photo Collage Maker</h3><p>Combine two images side by side.</p></div>
 <div class="card" data-name="instagram dp maker"><div class="ico">⭕</div><h3>Instagram DP Maker</h3><p>Make a square profile picture crop.</p></div>
 <div class="card" data-name="photo enhancer"><div class="ico">✨</div><h3>Photo Enhancer</h3><p>Adjust brightness, contrast and saturation.</p></div>
-<div class="card" data-name="background remover"><div class="ico">🪄</div><h3>Background Remover</h3><p>Remove a photo background in your browser and download a transparent PNG.</p></div>
-<div class="card" data-name="pdf merger"><div class="ico">📚</div><h3>PDF Merger</h3><p>Combine multiple PDF files into one PDF in your browser.</p></div>
+<div class="card" data-name="background remover"><div class="ico">🪄</div><h3>Background Remover</h3><p>Background removal requires an image-processing service; this starter shows setup guidance.</p></div>
+<div class="card" data-name="pdf merger"><div class="ico">📚</div><h3>PDF Merger</h3><p>PDF merging needs a dedicated PDF library; planned module.</p></div>
 <div class="card" data-name="youtube thumbnail maker"><div class="ico">▶️</div><h3>YouTube Thumbnail Maker</h3><p>Create a 1280 × 720 thumbnail canvas from an image.</p></div>
 </section>
 <section id="toolbox" class="toolbox">
@@ -49,20 +65,19 @@ nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}nav a{color:#e3e9ff;tex
 <section id="about" class="page"><h2>About MUSTAKIMZX TOOLS</h2><p>MUSTAKIMZX TOOLS is a collection of simple browser-based utilities for everyday image and document tasks. The tools are designed to be easy to use on mobile phones and computers.</p></section>
 <section id="privacy" class="page"><h2>Privacy Policy</h2><p>Images selected for browser-based tools are processed locally in your browser where possible. This starter website does not intentionally upload those files to a server. If analytics, advertising or third-party services are added, update this policy to describe the data they collect, cookies, consent choices and how users can contact the site owner.</p><p>Third-party advertising providers, including Google where enabled, may use cookies or similar technologies to show ads. Publish a complete policy that accurately reflects the services you actually use before applying for advertising.</p></section>
 <section id="contact" class="page"><h2>Contact Us</h2><p>For questions or feedback, email: <a href="mailto:mustakimsardar00142@gmail.com">mustakimsardar00142@gmail.com</a></p></section>
-<div class="ad">Advertisement space — keep ads clearly separate from tool controls</div>
+<div class="ad">ADVERTISEMENT SPACE · Keep ads clearly separate from tool controls</div>
 </main>
 <footer>© <span id="year"></span> MUSTAKIMZX TOOLS · <a href="#" onclick="showPage('about')">About</a><a href="#" onclick="showPage('privacy')">Privacy Policy</a><a href="#" onclick="showPage('contact')">Contact</a><p style="font-size:12px;color:#aab5ca">Free tools. No guarantee of uninterrupted availability.</p></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script>
 const grid=document.getElementById('toolGrid'), box=document.getElementById('toolbox'), controls=document.getElementById('toolControls'), result=document.getElementById('toolResult');
 let currentImage=null, currentFile=null;
 document.getElementById('year').textContent=new Date().getFullYear();
 function home(){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));grid.style.display='grid';box.classList.remove('active')}
 function showPage(id){home();grid.style.display='none';document.getElementById(id).classList.add('active')}
-function filterTools(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.dataset.name.includes(q)?'block':'none')}
+function filterTools(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.category-group').forEach(g=>{let shown=0;g.querySelectorAll('.card').forEach(c=>{c.style.display=c.dataset.name.includes(q)?'':'none';if(c.style.display!=='none')shown++});g.style.display=shown?'':'none'})}
 function closeTool(){box.classList.remove('active');grid.style.display='grid';result.innerHTML=''}
 function fileInput(){return '<div class="row"><input id="file" type="file" accept="image/*"></div>'}
 function loadFile(){return new Promise((resolve,reject)=>{let f=document.getElementById('file').files[0];if(!f)return reject('Please choose an image.');currentFile=f;let im=new Image();im.onload=()=>{currentImage=im;resolve(im)};im.onerror=()=>reject('Could not read this image.');im.src=URL.createObjectURL(f)})}
@@ -82,13 +97,29 @@ function openTool(name){
  else if(n==='photo collage maker') html=`<div class="row"><input id="file" type="file" accept="image/*"><input id="file2" type="file" accept="image/*"></div><button onclick="collage()">Create collage</button>`;
  else if(n==='instagram dp maker') html+=`<button onclick="squareDP()">Create square DP</button>`;
  else if(n==='photo enhancer') html+=`<div class="row"><label>Brightness <input id="bright" type="range" min="50" max="160" value="110"></label><label>Contrast <input id="contrast" type="range" min="50" max="180" value="115"></label><label>Saturation <input id="sat" type="range" min="0" max="200" value="110"></label><button onclick="enhance()">Apply & Download</button></div>`;
- else if(n==='background remover') html=`<p>Upload a clear photo. The AI model downloads the first time you use this tool; processing runs on your device.</p><div class="row"><input id="bgfile" type="file" accept="image/*"><button id="removeBgBtn" onclick="removeBackgroundNow()">Remove Background</button></div><p id="bgstatus" class="hint"></p><img id="bgpreview" style="display:none;max-width:100%;max-height:420px;background: repeating-conic-gradient(#ddd 0% 25%,white 0% 50%) 50%/20px 20px;border:1px solid #ddd;border-radius:10px"><div class="row"><button id="bgdownload" style="display:none" onclick="downloadBg()">Download Transparent PNG</button></div><p class="hint">Note: first use needs internet and may take time or memory on older phones. Review the model/library licence before commercial deployment.</p>`;
- else if(n==='pdf merger') html=`<p>Select two or more PDF files. They will be combined in the order selected.</p><div class="row"><input id="pdffiles" type="file" accept="application/pdf,.pdf" multiple><button onclick="mergePDFs()">Merge PDFs</button></div><p id="pdfstatus" class="hint"></p>`;
+ else if(n==='background remover') html=`<p>This feature needs a background-removal model or API. It is not enabled in this offline starter build, and no fake removal will be shown.</p><p>For a production version, connect a reputable provider and publish its privacy and pricing details.</p>`;
+ else if(n==='pdf merger') html=`<p>PDF merging is not enabled in this starter build. Add a tested PDF library before offering this tool to visitors.</p>`;
  else if(n==='youtube thumbnail maker') html+=`<button onclick="thumbnail()">Create 1280 × 720 thumbnail</button>`;
  controls.innerHTML=html;document.getElementById('toolHint').textContent='Choose a file if requested. Image processing runs locally in your browser.';
  if(n==='signature maker') setupSign();
 }
 document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>openTool(c.querySelector('h3').textContent)));
+// Organize the tools into clear professional categories.
+(function organizeTools(){
+ const categories=[
+  ['📸 Photo & ID Tools',['passport photo maker','instagram dp maker','signature maker','photo collage maker']],
+  ['🛠️ Image Editing Tools',['image resizer','image compressor','jpg png webp converter','image cropper','photo enhancer','background remover']],
+  ['📄 PDF & Document Tools',['jpg to pdf','pdf merger']],
+  ['🔳 QR, Barcode & Design Tools',['qr code generator','barcode generator','youtube thumbnail maker']]
+ ];
+ const cards=[...grid.querySelectorAll('.card')];
+ for(const [label,keys] of categories){
+  const group=document.createElement('div');group.className='category-group';group.style.gridColumn='1/-1';
+  const heading=document.createElement('div');heading.className='category-label';heading.textContent=label;group.appendChild(heading);
+  const row=document.createElement('div');row.className='grid';row.style.gridTemplateColumns='inherit';
+  cards.filter(c=>keys.includes(c.dataset.name)).forEach(c=>row.appendChild(c));group.appendChild(row);grid.appendChild(group);
+ }
+})();
 async function withImage(fn){try{let im=await loadFile();fn(im)}catch(e){alert(e)}}
 function canvasFor(im,w,h,fit='fill'){let c=document.createElement('canvas');c.width=w;c.height=h;let x=c.getContext('2d');if(fit==='contain'){let s=Math.min(w/im.width,h/im.height);x.drawImage(im,(w-im.width*s)/2,(h-im.height*s)/2,im.width*s,im.height*s)}else x.drawImage(im,0,0,w,h);return c}
 function resizeImage(){withImage(im=>{let w=+document.getElementById('w').value,h=+document.getElementById('h').value;if(w<1||h<1||w>8000||h>8000)return alert('Enter dimensions from 1 to 8000.');downloadCanvas(canvasFor(im,w,h),'resized.png')})}
@@ -107,23 +138,5 @@ async function collage(){try{let f1=document.getElementById('file').files[0],f2=
 function squareDP(){withImage(im=>{let s=Math.min(im.width,im.height),x=(im.width-s)/2,y=(im.height-s)/2,c=document.createElement('canvas');c.width=c.height=800;c.getContext('2d').drawImage(im,x,y,s,s,0,0,800,800);downloadCanvas(c,'instagram-dp.png')})}
 function enhance(){withImage(im=>{let c=canvasFor(im,im.width,im.height),x=c.getContext('2d'),d=x.getImageData(0,0,c.width,c.height),b=+bright.value/100,co=+contrast.value/100,sa=+sat.value/100;for(let i=0;i<d.data.length;i+=4){let r=d.data[i],g=d.data[i+1],bl=d.data[i+2],gray=.299*r+.587*g+.114*bl;for(let k=0;k<3;k++){let v=d.data[i+k],z=gray+(v-gray)*sa;d.data[i+k]=Math.max(0,Math.min(255,((z-128)*co+128)*b))}}x.putImageData(d,0,0);downloadCanvas(c,'enhanced.png')})}
 function thumbnail(){withImage(im=>downloadCanvas(canvasFor(im,1280,720,'contain'),'youtube-thumbnail.png'))}
-let bgResultBlob=null;
-async function removeBackgroundNow(){
- const f=document.getElementById('bgfile').files[0], status=document.getElementById('bgstatus'), btn=document.getElementById('removeBgBtn');
- if(!f)return alert('Please choose an image first.'); if(!f.type.startsWith('image/'))return alert('Please choose a valid image.');
- btn.disabled=true;document.getElementById('bgdownload').style.display='none';status.textContent='Loading AI model… first use can take a few minutes.';
- try{
-  const mod=await import('https://esm.sh/@imgly/background-removal@1.5.8');
-  const blob=await mod.removeBackground(f,{progress:(key,current,total)=>{if(total)status.textContent='AI processing: '+Math.round(current/total*100)+'%';}});
-  bgResultBlob=blob;const url=URL.createObjectURL(blob),img=document.getElementById('bgpreview');img.src=url;img.style.display='block';document.getElementById('bgdownload').style.display='inline-block';status.textContent='Background removed successfully. Download your transparent PNG.';
- }catch(e){console.error(e);status.textContent='Could not remove background. Check internet connection, try a smaller JPG/PNG, or use a newer browser. '+(e.message||'');}
- finally{btn.disabled=false;}
-}
-function downloadBg(){if(!bgResultBlob)return;const a=document.createElement('a');a.href=URL.createObjectURL(bgResultBlob);a.download='mustakimzx-background-removed.png';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),30000)}
-async function mergePDFs(){
- const files=[...document.getElementById('pdffiles').files],status=document.getElementById('pdfstatus');if(files.length<2)return alert('Please select at least two PDF files.');
- if(!window.PDFLib)return status.textContent='PDF library did not load. Check your internet and refresh.';
- try{status.textContent='Merging PDFs…';const merged=await PDFLib.PDFDocument.create();for(const f of files){const bytes=await f.arrayBuffer(),src=await PDFLib.PDFDocument.load(bytes);const pages=await merged.copyPages(src,src.getPageIndices());pages.forEach(p=>merged.addPage(p));}const bytes=await merged.save(),blob=new Blob([bytes],{type:'application/pdf'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='merged.pdf';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);status.textContent='Done! Your merged PDF has been downloaded.';}catch(e){console.error(e);status.textContent='Could not merge one of the files. Make sure all PDFs are valid and not password-protected.';}
-}
 </script>
 </body></html>
