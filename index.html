@@ -1,142 +1,632 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
+<meta name="google-site-verification" content="LzTSTNOk2D1iHsPg6BjWa2k6izZNc_1kwd4Xa1rwOtU" />
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free online photo, image, PDF, QR code and barcode tools by MUSTAKIMZX TOOLS.">
-<meta name="theme-color" content="#10172a">
-<title>MUSTAKIMZX TOOLS - Free Online Tools</title>
-<style>
-:root{--bg:#080b16;--panel:#11182b;--panel2:#151f37;--muted:#9eabc4;--text:#f4f7ff;--accent:#8b7cff;--cyan:#40d9ff;--line:#273451}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(ellipse at 15% 0%,#18234a 0,transparent 38%),radial-gradient(ellipse at 90% 15%,#21153f 0,transparent 30%),var(--bg);color:var(--text);min-height:100vh}
-header{position:sticky;top:0;z-index:10;background:#090e1ddd;backdrop-filter:blur(16px);border-bottom:1px solid #26314c;padding:17px max(18px,calc((100% - 1180px)/2))}
-.brand{font-size:24px;font-weight:900;letter-spacing:.7px}.brand span{background:linear-gradient(90deg,#57dcff,#a18bff);-webkit-background-clip:text;background-clip:text;color:transparent}
-nav{display:flex;gap:20px;flex-wrap:wrap;margin-top:13px}nav a{color:#c8d2e8;text-decoration:none;font-size:14px}nav a:hover{color:#6fe5ff}
-.hero{max-width:1180px;margin:46px auto 28px;padding:0 20px}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.08;margin:0 0 12px;letter-spacing:-1.5px}.hero h1 span{background:linear-gradient(90deg,#55dcff,#a18bff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);margin:0 0 22px;font-size:16px}.search{width:100%;max-width:680px;padding:16px 18px;border:1px solid #344365;border-radius:14px;font-size:15px;background:#111a2d;color:white;outline:none;box-shadow:0 10px 35px #0005}.search:focus{border-color:#7d83ff;box-shadow:0 0 0 3px #7d83ff22}
-.wrap{max-width:1180px;margin:auto;padding:0 20px 48px}.ad{min-height:84px;border:1px dashed #394663;border-radius:15px;display:flex;align-items:center;justify-content:center;color:#8492ad;background:#0d1425aa;margin:20px 0;font-size:12px;letter-spacing:.4px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.card{background:linear-gradient(145deg,#151f35,#0f1729);border:1px solid #273653;border-radius:18px;padding:20px;box-shadow:0 12px 30px #0003;cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;min-height:150px}.card:hover{transform:translateY(-5px);border-color:#777cff;box-shadow:0 16px 36px #655cff20}.ico{font-size:29px;width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,#344d85,#42306e);margin-bottom:13px}.card h3{margin:0 0 7px;font-size:16px}.card p{margin:0;color:#9eabc4;font-size:13px;line-height:1.55}
-.toolbox{display:none;background:linear-gradient(145deg,#151f35,#0f1729);border:1px solid #2b3a5b;border-radius:20px;padding:24px;margin:24px 0;box-shadow:0 15px 45px #0004}.toolbox.active{display:block}.toolbox h2{margin:14px 0 6px}.hint{color:#a5b1c9;font-size:13px}.row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.row input,.row select,textarea{padding:12px;border:1px solid #344365;border-radius:10px;max-width:100%;background:#0b1324;color:#f4f7ff}button,.btn{border:0;border-radius:10px;background:linear-gradient(100deg,#5868ee,#8c63e9);color:white;padding:12px 17px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px #665cff33}button:hover{filter:brightness(1.12)}button.secondary{background:#202d49;color:#dce6ff;box-shadow:none}button:disabled{opacity:.45}canvas{max-width:100%;height:auto;border:1px solid #344365;border-radius:10px;margin-top:12px;background:white}.result{margin-top:12px;overflow-wrap:anywhere}.result canvas{background:white}footer{background:#070b14;border-top:1px solid #202b43;color:#c3cde0;padding:30px 18px;text-align:center}footer a{color:#9eaaff;margin:0 9px}.page{display:none;background:#111a2d;border:1px solid #293958;border-radius:18px;padding:24px;margin:22px 0;color:#dce5f7}.page.active{display:block}.page h2{margin-top:0;color:white}.page a{color:#8ddfff}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUSTAKIMZX</title>
+<link rel="icon" type="image/png" href="logo.png"><script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script><style>
+*{box-sizing:border-box}
 
-/* Premium dashboard refresh */
-:root{--bg:#070a14;--panel:#10182b;--line:#293858}
-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:15px;padding-bottom:15px}
-header nav{margin:0;align-items:center;gap:9px}nav a{padding:9px 13px;border-radius:10px}nav a:hover{background:#1c2945}
-.hero{margin-top:48px;margin-bottom:34px}.hero:before{content:"✦  YOUR EVERYDAY DIGITAL TOOLKIT";display:inline-block;color:#7de6ff;background:#14213a;border:1px solid #30466c;border-radius:30px;padding:8px 13px;font-size:11px;font-weight:800;letter-spacing:1.2px;margin-bottom:18px}
-.hero h1{max-width:800px}.hero p{max-width:650px;line-height:1.7}
-.stats{display:flex;gap:12px;flex-wrap:wrap;margin:23px 0}.stat{border:1px solid #2b3b5c;background:#101a30;border-radius:13px;padding:11px 15px;color:#b9c7e2;font-size:12px}.stat b{color:#fff;font-size:16px;margin-right:5px}
-.section-head{display:flex;align-items:end;justify-content:space-between;margin:32px 0 14px}.section-head h2{font-size:22px;margin:0}.section-head p{margin:5px 0 0;color:#91a2c1;font-size:13px}
-.category-label{display:flex;align-items:center;gap:10px;color:#8de6ff;font-weight:800;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;margin:30px 0 13px}.category-label:after{content:"";height:1px;background:#293858;flex:1}
-.grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:15px}.card{position:relative;overflow:hidden;min-height:158px;padding:19px;background:linear-gradient(145deg,#141f37 0%,#0c1425 100%)}.card:after{content:"↗";position:absolute;right:17px;top:17px;color:#7184ad;font-size:17px}.card:hover{transform:translateY(-4px);border-color:#53d7ff;box-shadow:0 15px 35px #1b9fc522}.ico{background:linear-gradient(135deg,#183d5d,#39316b);border:1px solid #3b5a86}
-.ad{max-width:1000px;margin:28px auto}.toolbox{scroll-margin-top:100px}.toolbox.active{animation:rise .25s ease}@keyframes rise{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:none}}
-footer{line-height:2}
-@media(max-width:700px){header{display:block}header nav{margin-top:12px;gap:4px}nav a{padding:8px 9px;font-size:12px}.hero{margin-top:30px}.stats{gap:7px}.stat{padding:9px 11px}.section-head h2{font-size:19px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card{min-height:158px}}
-
-@media(max-width:600px){header{padding:15px 18px}.brand{font-size:21px}.hero{margin:32px auto 22px}.toolbox{padding:17px}.row>*{width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card{padding:15px;min-height:150px}.card h3{font-size:14px}.card p{font-size:12px}.ico{width:42px;height:42px;font-size:24px}}
-</style>
-</head>
-<body>
-<header><div class="brand">MUSTAKIMZX <span>TOOLS</span></div><nav><a href="#" onclick="home()">Home</a><a href="#tools">All Tools</a><a href="#" onclick="showPage('about')">About</a><a href="#" onclick="showPage('privacy')">Privacy</a><a href="#" onclick="showPage('contact')">Contact</a></nav></header>
-<section class="hero"><h1>Powerful Online Tools.<br><span>One Smart Workspace.</span></h1><p>Fast, simple tools for photos, images, QR codes, barcodes and PDF files — built for mobile and desktop.</p><input class="search" id="search" placeholder="Search a tool..." oninput="filterTools()"></section>
-<main class="wrap">
-<div class="ad">ADVERTISEMENT SPACE · Add approved AdSense code after approval</div>
-<div class="stats"><div class="stat"><b>15+</b> useful tools</div><div class="stat"><b>100%</b> browser-based tools where supported</div><div class="stat"><b>Free</b> to use</div></div>
-<div class="section-head"><div><h2>Explore all tools</h2><p>Choose a tool and get your work done in seconds.</p></div></div>
-<section id="toolGrid" class="grid">
-<div class="card" data-name="image resizer"><div class="ico">📐</div><h3>Image Resizer</h3><p>Resize an image to your required width and height.</p></div>
-<div class="card" data-name="image compressor"><div class="ico">🗜️</div><h3>Image Compressor</h3><p>Reduce image file size and download a compressed copy.</p></div>
-<div class="card" data-name="jpg png webp converter"><div class="ico">🔄</div><h3>Image Converter</h3><p>Convert images between JPG, PNG and WebP.</p></div>
-<div class="card" data-name="image cropper"><div class="ico">✂️</div><h3>Image Cropper</h3><p>Crop an image using a simple selection area.</p></div>
-<div class="card" data-name="passport photo maker"><div class="ico">🪪</div><h3>Passport Photo Maker</h3><p>Prepare a 35 × 45 mm style photo canvas.</p></div>
-<div class="card" data-name="signature maker"><div class="ico">✍️</div><h3>Signature Maker</h3><p>Draw and save a transparent signature PNG.</p></div>
-<div class="card" data-name="qr code generator"><div class="ico">▦</div><h3>QR Code Generator</h3><p>Create a QR code from text or a website link.</p></div>
-<div class="card" data-name="barcode generator"><div class="ico">▥</div><h3>Barcode Generator</h3><p>Generate a Code 128 barcode from text or numbers.</p></div>
-<div class="card" data-name="jpg to pdf"><div class="ico">📄</div><h3>JPG to PDF</h3><p>Turn an image into a downloadable PDF page.</p></div>
-<div class="card" data-name="photo collage maker"><div class="ico">🖼️</div><h3>Photo Collage Maker</h3><p>Combine two images side by side.</p></div>
-<div class="card" data-name="instagram dp maker"><div class="ico">⭕</div><h3>Instagram DP Maker</h3><p>Make a square profile picture crop.</p></div>
-<div class="card" data-name="photo enhancer"><div class="ico">✨</div><h3>Photo Enhancer</h3><p>Adjust brightness, contrast and saturation.</p></div>
-<div class="card" data-name="background remover"><div class="ico">🪄</div><h3>Background Remover</h3><p>Background removal requires an image-processing service; this starter shows setup guidance.</p></div>
-<div class="card" data-name="pdf merger"><div class="ico">📚</div><h3>PDF Merger</h3><p>PDF merging needs a dedicated PDF library; planned module.</p></div>
-<div class="card" data-name="youtube thumbnail maker"><div class="ico">▶️</div><h3>YouTube Thumbnail Maker</h3><p>Create a 1280 × 720 thumbnail canvas from an image.</p></div>
-</section>
-<section id="toolbox" class="toolbox">
-<button class="secondary" onclick="closeTool()">← All tools</button><h2 id="toolTitle">Tool</h2><p class="hint" id="toolHint">Choose a file to begin. Your image is processed in your browser.</p>
-<div id="toolControls"></div><div id="toolResult" class="result"></div>
-</section>
-<section id="about" class="page"><h2>About MUSTAKIMZX TOOLS</h2><p>MUSTAKIMZX TOOLS is a collection of simple browser-based utilities for everyday image and document tasks. The tools are designed to be easy to use on mobile phones and computers.</p></section>
-<section id="privacy" class="page"><h2>Privacy Policy</h2><p>Images selected for browser-based tools are processed locally in your browser where possible. This starter website does not intentionally upload those files to a server. If analytics, advertising or third-party services are added, update this policy to describe the data they collect, cookies, consent choices and how users can contact the site owner.</p><p>Third-party advertising providers, including Google where enabled, may use cookies or similar technologies to show ads. Publish a complete policy that accurately reflects the services you actually use before applying for advertising.</p></section>
-<section id="contact" class="page"><h2>Contact Us</h2><p>For questions or feedback, email: <a href="mailto:mustakimsardar00142@gmail.com">mustakimsardar00142@gmail.com</a></p></section>
-<div class="ad">ADVERTISEMENT SPACE · Keep ads clearly separate from tool controls</div>
-</main>
-<footer>© <span id="year"></span> MUSTAKIMZX TOOLS · <a href="#" onclick="showPage('about')">About</a><a href="#" onclick="showPage('privacy')">Privacy Policy</a><a href="#" onclick="showPage('contact')">Contact</a><p style="font-size:12px;color:#aab5ca">Free tools. No guarantee of uninterrupted availability.</p></footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script>
-const grid=document.getElementById('toolGrid'), box=document.getElementById('toolbox'), controls=document.getElementById('toolControls'), result=document.getElementById('toolResult');
-let currentImage=null, currentFile=null;
-document.getElementById('year').textContent=new Date().getFullYear();
-function home(){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));grid.style.display='grid';box.classList.remove('active')}
-function showPage(id){home();grid.style.display='none';document.getElementById(id).classList.add('active')}
-function filterTools(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('.category-group').forEach(g=>{let shown=0;g.querySelectorAll('.card').forEach(c=>{c.style.display=c.dataset.name.includes(q)?'':'none';if(c.style.display!=='none')shown++});g.style.display=shown?'':'none'})}
-function closeTool(){box.classList.remove('active');grid.style.display='grid';result.innerHTML=''}
-function fileInput(){return '<div class="row"><input id="file" type="file" accept="image/*"></div>'}
-function loadFile(){return new Promise((resolve,reject)=>{let f=document.getElementById('file').files[0];if(!f)return reject('Please choose an image.');currentFile=f;let im=new Image();im.onload=()=>{currentImage=im;resolve(im)};im.onerror=()=>reject('Could not read this image.');im.src=URL.createObjectURL(f)})}
-function downloadCanvas(c,name,type='image/png',quality=.9){let a=document.createElement('a');a.href=c.toDataURL(type,quality);a.download=name;a.click()}
-function openTool(name){
- home();grid.style.display='none';box.classList.add('active');document.getElementById('toolTitle').textContent=name;result.innerHTML='';
- let n=name.toLowerCase(), html=fileInput();
- if(n==='image resizer') html+=`<div class="row"><input id="w" type="number" placeholder="Width px" value="600"><input id="h" type="number" placeholder="Height px" value="600"><button onclick="resizeImage()">Resize & Download</button></div>`;
- else if(n==='image compressor') html+=`<div class="row"><label>Quality <input id="quality" type="range" min=".1" max="1" step=".05" value=".7"></label><button onclick="compressImage()">Compress & Download JPG</button></div>`;
- else if(n==='image converter') html+=`<div class="row"><select id="format"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option></select><button onclick="convertImage()">Convert & Download</button></div>`;
- else if(n==='image cropper') html+=`<div class="row"><input id="cx" type="number" placeholder="X" value="0"><input id="cy" type="number" placeholder="Y" value="0"><input id="cw" type="number" placeholder="Width" value="500"><input id="ch" type="number" placeholder="Height" value="500"><button onclick="cropImage()">Crop & Download</button></div>`;
- else if(n==='passport photo maker') html+=`<p class="hint">Creates a 413 × 531 px portrait canvas (approx. 35 × 45 mm at 300 DPI). Check the destination authority's exact photo rules.</p><button onclick="passport()">Create photo</button>`;
- else if(n==='signature maker') html=`<p>Draw below using your finger or mouse.</p><canvas id="sign" width="700" height="250" style="touch-action:none;background:white"></canvas><div class="row"><button onclick="clearSign()" class="secondary">Clear</button><button onclick="saveSign()">Download PNG</button></div>`;
- else if(n==='qr code generator') html=`<div class="row"><input id="qrtext" placeholder="Enter text or URL" style="flex:1"><button onclick="makeQR()">Generate QR</button></div><div id="qrout"></div>`;
- else if(n==='barcode generator') html=`<div class="row"><input id="bartext" placeholder="Enter text or numbers"><button onclick="makeBarcode()">Generate</button></div><svg id="barcode"></svg>`;
- else if(n==='jpg to pdf') html+=`<button onclick="imageToPdf()">Create PDF</button>`;
- else if(n==='photo collage maker') html=`<div class="row"><input id="file" type="file" accept="image/*"><input id="file2" type="file" accept="image/*"></div><button onclick="collage()">Create collage</button>`;
- else if(n==='instagram dp maker') html+=`<button onclick="squareDP()">Create square DP</button>`;
- else if(n==='photo enhancer') html+=`<div class="row"><label>Brightness <input id="bright" type="range" min="50" max="160" value="110"></label><label>Contrast <input id="contrast" type="range" min="50" max="180" value="115"></label><label>Saturation <input id="sat" type="range" min="0" max="200" value="110"></label><button onclick="enhance()">Apply & Download</button></div>`;
- else if(n==='background remover') html=`<p>This feature needs a background-removal model or API. It is not enabled in this offline starter build, and no fake removal will be shown.</p><p>For a production version, connect a reputable provider and publish its privacy and pricing details.</p>`;
- else if(n==='pdf merger') html=`<p>PDF merging is not enabled in this starter build. Add a tested PDF library before offering this tool to visitors.</p>`;
- else if(n==='youtube thumbnail maker') html+=`<button onclick="thumbnail()">Create 1280 × 720 thumbnail</button>`;
- controls.innerHTML=html;document.getElementById('toolHint').textContent='Choose a file if requested. Image processing runs locally in your browser.';
- if(n==='signature maker') setupSign();
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f1f3f6;
+ color:#222;
 }
-document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>openTool(c.querySelector('h3').textContent)));
-// Organize the tools into clear professional categories.
-(function organizeTools(){
- const categories=[
-  ['📸 Photo & ID Tools',['passport photo maker','instagram dp maker','signature maker','photo collage maker']],
-  ['🛠️ Image Editing Tools',['image resizer','image compressor','jpg png webp converter','image cropper','photo enhancer','background remover']],
-  ['📄 PDF & Document Tools',['jpg to pdf','pdf merger']],
-  ['🔳 QR, Barcode & Design Tools',['qr code generator','barcode generator','youtube thumbnail maker']]
- ];
- const cards=[...grid.querySelectorAll('.card')];
- for(const [label,keys] of categories){
-  const group=document.createElement('div');group.className='category-group';group.style.gridColumn='1/-1';
-  const heading=document.createElement('div');heading.className='category-label';heading.textContent=label;group.appendChild(heading);
-  const row=document.createElement('div');row.className='grid';row.style.gridTemplateColumns='inherit';
-  cards.filter(c=>keys.includes(c.dataset.name)).forEach(c=>row.appendChild(c));group.appendChild(row);grid.appendChild(group);
+
+header{
+ background:#a60018;
+ color:white;
+ text-align:center;
+ padding:22px 15px;
+}
+
+header h2{
+ margin:0;
+ font-size:25px;
+}
+
+header p{
+ margin:8px 0;
+ font-size:14px;
+}
+
+.contact{
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ width:70px;
+ height:70px;
+ margin:12px auto 0;
+ border-radius:50%;
+ background:#20bd68;
+ color:white;
+ border:3px solid white;
+ font-size:38px;
+ text-decoration:none;
+ box-shadow:0 3px 10px #0003;
+}
+
+.contact small{
+ display:none;
+}
+
+/* EMAIL ID */
+.email-text{
+ display:block;
+ color:white;
+ text-align:center;
+ text-decoration:none;
+ font-size:14px;
+ margin-top:8px;
+}
+
+.container{
+ max-width:650px;
+ margin:20px auto;
+ padding:14px;
+}
+
+.tabs{
+ display:flex;
+ gap:10px;
+ margin-bottom:16px;
+}
+
+.tabs button{
+ flex:1;
+ padding:16px 5px;
+ border:0;
+ border-radius:9px;
+ background:#ddd;
+ font-weight:bold;
+ font-size:14px;
+}
+
+.tabs button.active{
+ background:#a60018;
+ color:white;
+}
+
+.card{
+ background:white;
+ padding:20px;
+ border-radius:13px;
+ box-shadow:0 3px 12px #0001;
+}
+
+h3{
+ margin-top:0;
+ color:#a60018;
+ font-size:21px;
+}
+
+label{
+ display:block;
+ font-weight:bold;
+ margin:16px 0 8px;
+ font-size:16px;
+}
+
+input{
+ width:100%;
+ padding:15px;
+ border:1px solid #ccc;
+ border-radius:9px;
+ font-size:17px;
+}
+
+button{
+ cursor:pointer;
+}
+
+.mainbtn{
+ width:100%;
+ padding:16px;
+ margin-top:18px;
+ border:0;
+ border-radius:9px;
+ background:#a60018;
+ color:white;
+ font-size:16px;
+ font-weight:bold;
+}
+
+.secondary{
+ background:#252525;
+}
+
+.actions{
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+}
+
+.actions button{
+ flex:1;
+ min-width:120px;
+}
+
+.result{
+ margin-top:20px;
+ text-align:center;
+}
+
+.qrbox{
+ display:block;
+ width:190px;
+ max-width:100%;
+ padding:12px;
+ margin:8px auto;
+}
+
+.qrbox p{
+ font-size:15px;
+ font-weight:bold;
+ word-break:break-all;
+}
+
+.qrbox img,
+.qrbox canvas{
+ max-width:100%;
+ height:auto;
+}
+
+.note{
+ color:#666;
+ font-size:13px;
+ line-height:1.6;
+ margin-top:15px;
+}
+
+.status{
+ color:#16784b;
+ font-weight:bold;
+ margin-top:18px;
+}
+
+.hidden{
+ display:none!important;
+}
+
+#barcode{
+ max-width:100%;
+ height:auto;
+}
+
+footer{
+ text-align:center;
+ padding:22px;
+ color:#777;
+ font-size:12px;
+}
+
+@media(max-width:400px){
+ .card{padding:15px}
+ .tabs button{font-size:12px}
+}
+
+@media print{
+ header,.tabs,.no-print,footer{
+  display:none!important;
  }
-})();
-async function withImage(fn){try{let im=await loadFile();fn(im)}catch(e){alert(e)}}
-function canvasFor(im,w,h,fit='fill'){let c=document.createElement('canvas');c.width=w;c.height=h;let x=c.getContext('2d');if(fit==='contain'){let s=Math.min(w/im.width,h/im.height);x.drawImage(im,(w-im.width*s)/2,(h-im.height*s)/2,im.width*s,im.height*s)}else x.drawImage(im,0,0,w,h);return c}
-function resizeImage(){withImage(im=>{let w=+document.getElementById('w').value,h=+document.getElementById('h').value;if(w<1||h<1||w>8000||h>8000)return alert('Enter dimensions from 1 to 8000.');downloadCanvas(canvasFor(im,w,h),'resized.png')})}
-function compressImage(){withImage(im=>downloadCanvas(canvasFor(im,im.width,im.height),'compressed.jpg','image/jpeg',+document.getElementById('quality').value))}
-function convertImage(){withImage(im=>{let t=document.getElementById('format').value;downloadCanvas(canvasFor(im,im.width,im.height),'converted.'+(t==='image/png'?'png':t==='image/webp'?'webp':'jpg'),t)})}
-function cropImage(){withImage(im=>{let x=+cx.value,y=+cy.value,w=+cw.value,h=+ch.value;if(w<1||h<1||x<0||y<0||x+w>im.width||y+h>im.height)return alert('Crop area is outside the image.');let c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(im,x,y,w,h,0,0,w,h);downloadCanvas(c,'cropped.png')})}
-function passport(){withImage(im=>downloadCanvas(canvasFor(im,413,531,'contain'),'passport-photo.png'))}
-let drawing=false;
-function setupSign(){let c=document.getElementById('sign'),ctx=c.getContext('2d');ctx.lineWidth=4;ctx.lineCap='round';function pos(e){let r=c.getBoundingClientRect();return [(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height]}c.onpointerdown=e=>{drawing=true;let p=pos(e);ctx.beginPath();ctx.moveTo(...p);c.setPointerCapture(e.pointerId)};c.onpointermove=e=>{if(drawing){let p=pos(e);ctx.lineTo(...p);ctx.stroke()}};c.onpointerup=()=>drawing=false}
-function clearSign(){let c=document.getElementById('sign');c.getContext('2d').clearRect(0,0,c.width,c.height)}
-function saveSign(){downloadCanvas(document.getElementById('sign'),'signature.png')}
-function makeQR(){let t=document.getElementById('qrtext').value.trim();if(!t)return alert('Enter text or URL.');let o=document.getElementById('qrout');o.innerHTML='';new QRCode(o,{text:t,width:220,height:220,correctLevel:QRCode.CorrectLevel.H})}
-function makeBarcode(){let t=document.getElementById('bartext').value.trim();if(!t)return alert('Enter text or numbers.');try{JsBarcode('#barcode',t,{format:'CODE128',displayValue:true});}catch(e){alert('Unable to create barcode.')}}
-async function imageToPdf(){try{let im=await loadFile();let {jsPDF}=window.jspdf;let pdf=new jsPDF({orientation:im.width>im.height?'landscape':'portrait',unit:'px',format:[im.width,im.height]});pdf.addImage(im,'JPEG',0,0,im.width,im.height);pdf.save('image.pdf')}catch(e){alert(e)}}
-async function collage(){try{let f1=document.getElementById('file').files[0],f2=document.getElementById('file2').files[0];if(!f1||!f2)return alert('Choose two images.');let load=f=>new Promise((res,rej)=>{let i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=URL.createObjectURL(f)});let [a,b]=await Promise.all([load(f1),load(f2)]);let h=500,c=document.createElement('canvas');c.width=1000;c.height=h;let x=c.getContext('2d');x.drawImage(a,0,0,500,h);x.drawImage(b,500,0,500,h);downloadCanvas(c,'collage.png')}catch(e){alert('Could not load images.')}}
-function squareDP(){withImage(im=>{let s=Math.min(im.width,im.height),x=(im.width-s)/2,y=(im.height-s)/2,c=document.createElement('canvas');c.width=c.height=800;c.getContext('2d').drawImage(im,x,y,s,s,0,0,800,800);downloadCanvas(c,'instagram-dp.png')})}
-function enhance(){withImage(im=>{let c=canvasFor(im,im.width,im.height),x=c.getContext('2d'),d=x.getImageData(0,0,c.width,c.height),b=+bright.value/100,co=+contrast.value/100,sa=+sat.value/100;for(let i=0;i<d.data.length;i+=4){let r=d.data[i],g=d.data[i+1],bl=d.data[i+2],gray=.299*r+.587*g+.114*bl;for(let k=0;k<3;k++){let v=d.data[i+k],z=gray+(v-gray)*sa;d.data[i+k]=Math.max(0,Math.min(255,((z-128)*co+128)*b))}}x.putImageData(d,0,0);downloadCanvas(c,'enhanced.png')})}
-function thumbnail(){withImage(im=>downloadCanvas(canvasFor(im,1280,720,'contain'),'youtube-thumbnail.png'))}
-</script>
-</body></html>
+ body{background:white}
+ .container{margin:0;padding:0}
+ .card{box-shadow:none}
+}
+</style></head><body><header>
+ <h2>MUSTAKIMZX</h2>
+ <p>Professional QR & Barcode Generator</p><a class="contact"
+href="mailto:mustakimsardar00142@gmail.com"
+title="Contact by Email">
+✉
+</a>
+
+<a class="email-text"
+href="mailto:mustakimsardar00142@gmail.com">
+mustakimsardar00142@gmail.com
+</a>
+
+</header><div class="container"> <div class="tabs no-print"><button id="qrTab"
+class="active"
+onclick="showMode('qr')">
+QR CODE
+</button>
+
+<button id="barTab"
+onclick="showMode('bar')">
+CODE 39 BARCODE
+</button>
+
+ </div> <!-- QR SECTION --> <div id="qrSection" class="card">  <h3>QR CODE GENERATOR</h3><label>Starting Number</label>
+
+<input
+id="qrStart"
+type="text"
+inputmode="numeric"
+placeholder="Example: 1090452546">
+
+<label>Quantity</label>
+
+<input
+id="qrQty"
+type="number"
+min="1"
+max="100"
+value="10">
+
+<button class="mainbtn no-print"
+onclick="makeQR()">
+GENERATE QR CODES
+</button>
+
+  <p class="note">
+  Example: Starting number 1090452546 aur quantity 3 dene par QR content hoga:
+  1090452546-1, 1090452546-2, 1090452546-3.
+  </p>  <div id="qrStatus" class="status"></div>  <div id="qrResult" class="result"></div>  <div class="actions no-print"><button class="mainbtn secondary"
+onclick="downloadPDF()">
+DOWNLOAD A4 PDF / PRINT
+</button>
+
+<button class="mainbtn secondary"
+onclick="clearQR()">
+CLEAR
+</button>
+
+  </div> </div> <!-- BARCODE SECTION --> <div id="barSection" class="card hidden">  <h3>CODE 39 BARCODE GENERATOR</h3><label>Enter Number / Value</label>
+
+<input
+id="barInput"
+type="text"
+placeholder="Example: 1090452546">
+
+<button class="mainbtn no-print"
+onclick="makeBarcode()">
+GENERATE BARCODE
+</button>
+
+  <div id="barStatus" class="status"></div>  <div id="barResult" class="result">
+   <svg id="barcode"></svg>
+  </div>  <div class="actions no-print"><button class="mainbtn secondary"
+onclick="downloadBarcode()">
+DOWNLOAD PNG
+</button>
+
+<button class="mainbtn secondary"
+onclick="printBarcode()">
+PRINT
+</button>
+
+  </div>  <p class="note">
+  Only ONE Code 39 barcode will be generated at a time.
+  Allowed: A-Z, 0-9, space, - . $ / + %
+  </p> </div></div><footer>
+ © 2026 MUSTAKIMZX
+</footer><script>
+
+let qrValues=[];
+let barcodeReady=false;
+
+function showMode(mode){
+
+ document.getElementById('qrSection')
+ .classList.toggle('hidden',mode!=='qr');
+
+ document.getElementById('barSection')
+ .classList.toggle('hidden',mode!=='bar');
+
+ document.getElementById('qrTab')
+ .classList.toggle('active',mode==='qr');
+
+ document.getElementById('barTab')
+ .classList.toggle('active',mode==='bar');
+
+}
+
+function makeQR(){
+
+ const start=document.getElementById('qrStart').value.trim();
+ const qty=parseInt(document.getElementById('qrQty').value);
+
+ const box=document.getElementById('qrResult');
+ const status=document.getElementById('qrStatus');
+
+ box.innerHTML='';
+ status.textContent='';
+ qrValues=[];
+
+ if(typeof QRCode==='undefined'){
+  alert('QR library load nahi hui. Internet check karein.');
+  return;
+ }
+
+ if(!/^\d+$/.test(start)){
+  alert('Please enter a valid starting number.');
+  return;
+ }
+
+ if(!qty || qty<1 || qty>500){
+  alert('Quantity 1 se 500 ke beech honi chahiye.');
+  return;
+ }
+
+ const first=BigInt(start);
+
+ for(let i=1;i<=qty;i++){
+
+  const value=first.toString()+'-'+i;
+
+  qrValues.push(value);
+
+  const item=document.createElement('div');
+  item.className='qrbox';
+
+  const qr=document.createElement('div');
+
+  const title=document.createElement('p');
+  title.textContent=value;
+
+  item.appendChild(qr);
+  item.appendChild(title);
+
+  box.appendChild(item);
+
+  new QRCode(qr,{
+   text:value,
+   width:160,
+   height:160,
+   correctLevel:QRCode.CorrectLevel.H
+  });
+
+ }
+
+ status.textContent=qty+' QR codes ready hain.';
+
+}
+
+function clearQR(){
+
+ qrValues=[];
+
+ document.getElementById('qrResult').innerHTML='';
+ document.getElementById('qrStatus').textContent='';
+ document.getElementById('qrStart').value='';
+ document.getElementById('qrQty').value='10';
+
+}
+
+function getQRImages(){
+
+ const images=[];
+
+ document.querySelectorAll('#qrResult .qrbox')
+ .forEach(box=>{
+
+  const canvas=box.querySelector('canvas');
+
+  if(canvas){
+   images.push(canvas.toDataURL('image/png'));
+  }
+
+ });
+
+ return images;
+
+}
+
+function downloadPDF(){
+
+ if(!qrValues.length){
+  alert('Please generate QR codes first.');
+  return;
+ }
+
+ if(!window.jspdf){
+  alert('PDF library load nahi hui. Internet check karein.');
+  return;
+ }
+
+ const images=getQRImages();
+
+ if(images.length!==qrValues.length){
+  alert('QR images ready nahi hain. Dobara Generate karein.');
+  return;
+ }
+
+ const {jsPDF}=window.jspdf;
+
+ const pdf=new jsPDF('p','mm','a4');
+
+ images.forEach((src,i)=>{
+
+  if(i>0 && i%8===0){
+   pdf.addPage();
+  }
+
+  const position=i%8;
+  const col=position%2;
+  const row=Math.floor(position/2);
+
+  const x=25+(col*95);
+  const y=10+(row*70);
+
+  pdf.setFontSize(11);
+  pdf.text(qrValues[i],x,y);
+
+  pdf.addImage(src,'PNG',x,y+3,45,45);
+
+ });
+
+ pdf.save('MUSTAKIMZX-QR-CODES.pdf');
+
+}
+
+function makeBarcode(){
+
+ const value=document.getElementById('barInput')
+ .value.trim().toUpperCase();
+
+ const status=document.getElementById('barStatus');
+
+ status.textContent='';
+ barcodeReady=false;
+
+ if(typeof JsBarcode==='undefined'){
+  alert('Barcode library load nahi hui. Internet check karein.');
+  return;
+ }
+
+ if(!value){
+  alert('Please enter a value.');
+  return;
+ }
+
+ try{
+
+  JsBarcode('#barcode',value,{
+   format:'CODE39',
+   width:2,
+   height:100,
+   displayValue:true,
+   margin:10
+  });
+
+  barcodeReady=true;
+  status.textContent='1 Barcode ready hai.';
+
+ }catch(error){
+
+  alert('Invalid Code 39 value. Allowed: A-Z, 0-9, space, - . $ / + %');
+
+ }
+
+}
+
+function downloadBarcode(){
+
+ if(!barcodeReady){
+  alert('Generate barcode first.');
+  return;
+ }
+
+ const svg=document.getElementById('barcode');
+
+ const xml=new XMLSerializer()
+ .serializeToString(svg);
+
+ const blob=new Blob([xml],{
+  type:'image/svg+xml;charset=utf-8'
+ });
+
+ const url=URL.createObjectURL(blob);
+ const img=new Image();
+
+ img.onload=function(){
+
+  const canvas=document.createElement('canvas');
+
+  canvas.width=img.width*2;
+  canvas.height=img.height*2;
+
+  const ctx=canvas.getContext('2d');
+
+  ctx.fillStyle='white';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  ctx.drawImage(img,0,0,canvas.width,canvas.height);
+
+  const link=document.createElement('a');
+
+  link.download='MUSTAKIMZX-CODE39.png';
+  link.href=canvas.toDataURL('image/png');
+
+  link.click();
+
+  URL.revokeObjectURL(url);
+
+ };
+
+ img.onerror=function(){
+  URL.revokeObjectURL(url);
+  alert('Barcode download failed.');
+ };
+
+ img.src=url;
+
+}
+
+function printBarcode(){
+
+ if(!barcodeReady){
+  alert('Generate barcode first.');
+  return;
+ }
+
+ const svg=document.getElementById('barcode').outerHTML;
+
+ printPage(svg);
+
+}
+
+function printQR(){
+
+ if(!qrValues.length){
+  alert('Generate QR codes first.');
+  return;
+ }
+
+ const images=getQRImages();
+
+ const content=images.map((src,i)=>`
+ <div style="display:inline-block;width:45%;text-align:center;margin:10px">
+ <p>${qrValues[i]}</p>
+ <img src="${src}" width="150">
+ </div>
+ `).join('');
+
+ printPage(content);
+
+}
+
+function printPage(content){
+
+ const win=window.open('','_blank');
+
+ if(!win){
+  alert('Please allow pop-ups to print.');
+  return;
+ }
+
+ win.document.open();
+
+ win.document.write(`
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <title>MUSTAKIMZX Print</title>
+ <style>
+ body{
+  font-family:Arial;
+  text-align:center;
+  padding:20px;
+ }
+ img{max-width:100%}
+ @media print{
+  body{padding:0}
+ }
+ </style> </head>
+ <body>
+ ${content}
+ </body>
+ </html>
+ `);win.document.close();
+
+win.onload=function(){
+win.focus();
+win.print();
+};
+
+}
+
+</script></body>
+</html>
